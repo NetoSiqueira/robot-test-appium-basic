@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.0rc3 on win32)" generated="2024-02-15T11:34:01.764895" rpa="false" schemaversion="5">
+<suite id="s1" name="Dragdrop" source="C:\QAX\projects\yodaap-robot\tests\dragdrop.robot">
+<test id="s1-t1" name="Deve arrrastar o Skywalke e soltar no topo da lista" line="7">
+<kw name="Start session" owner="base">
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>http://localhost:4723</arg>
+<arg>platformName=Android</arg>
+<arg>deviceName=Android Emulato</arg>
+<arg>automationName=UIAutomator2</arg>
+<arg>app=${EXECDIR}/app/yodapp-beta.apk</arg>
+<arg>udid=RX8NA0HAF1L</arg>
+<arg>autoGrantPermissions=true</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="PASS" start="2024-02-15T11:34:01.900170" elapsed="13.960259"/>
+</kw>
+<status status="PASS" start="2024-02-15T11:34:01.899170" elapsed="13.961259"/>
+</kw>
+<kw name="Get started" owner="base">
+<kw name="Wait Until Page Contains" owner="AppiumLibrary">
+<arg>${START}</arg>
+<arg>10</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" start="2024-02-15T11:34:15.861429" elapsed="5.779280"/>
+</kw>
+<kw name="Click Text" owner="AppiumLibrary">
+<msg time="2024-02-15T11:34:22.910474" level="INFO">xpath criteria: //*[contains(@text,"QAX")]</msg>
+<arg>${START}</arg>
+<doc>Click text identified by ``text``.</doc>
+<status status="PASS" start="2024-02-15T11:34:21.640709" elapsed="1.269765"/>
+</kw>
+<status status="PASS" start="2024-02-15T11:34:15.860429" elapsed="7.050045"/>
+</kw>
+<kw name="Navigate to" owner="base">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-02-15T11:34:22.911474" level="INFO">${menu} = xpath=//android.widget.ImageButton[@content-desc="Open navigation drawer"]</msg>
+<var>${menu}</var>
+<arg>xpath=//android.widget.ImageButton[@content-desc="Open navigation drawer"]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-02-15T11:34:22.911474" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2024-02-15T11:34:24.548710" level="INFO">xpath criteria: //android.widget.ImageButton[@content-desc="Open navigation drawer"]
+xpath criteria: //android.widget.ImageButton[@content-desc="Open navigation drawer"]</msg>
+<arg>${menu}</arg>
+<arg>5</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2024-02-15T11:34:22.911474" elapsed="1.637236"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2024-02-15T11:34:24.549712" level="INFO">Clicking element 'xpath=//android.widget.ImageButton[@content-desc="Open navigation drawer"]'.</msg>
+<msg time="2024-02-15T11:34:24.860372" level="INFO">xpath criteria: //android.widget.ImageButton[@content-desc="Open navigation drawer"]</msg>
+<arg>${menu}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2024-02-15T11:34:24.548710" elapsed="0.311662"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-02-15T11:34:24.860372" level="INFO">${menu_bnt_simples} = xpath=//*[@resource-id="com.qaxperience.yodapp:id/tvItemTitle"][@text="Star Wars"]</msg>
+<var>${menu_bnt_simples}</var>
+<arg>xpath=//*[@resource-id="com.qaxperience.yodapp:id/tvItemTitle"][@text="${menu_item}"]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-02-15T11:34:24.860372" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2024-02-15T11:34:25.848865" level="INFO">xpath criteria: //*[@resource-id="com.qaxperience.yodapp:id/tvItemTitle"][@text="Star Wars"]</msg>
+<arg>${menu_bnt_simples}</arg>
+<arg>5</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2024-02-15T11:34:24.860372" elapsed="0.988493"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2024-02-15T11:34:25.849866" level="INFO">Clicking element 'xpath=//*[@resource-id="com.qaxperience.yodapp:id/tvItemTitle"][@text="Star Wars"]'.</msg>
+<msg time="2024-02-15T11:34:26.326879" level="INFO">xpath criteria: //*[@resource-id="com.qaxperience.yodapp:id/tvItemTitle"][@text="Star Wars"]</msg>
+<arg>${menu_bnt_simples}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2024-02-15T11:34:25.848865" elapsed="0.478014"/>
+</kw>
+<arg>Star Wars</arg>
+<status status="PASS" start="2024-02-15T11:34:22.910474" elapsed="3.416405"/>
+</kw>
+<kw name="Go to" owner="base">
+<kw name="Wait Until Page Contains" owner="AppiumLibrary">
+<arg>${item}</arg>
+<arg>5</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" start="2024-02-15T11:34:26.326879" elapsed="0.711266"/>
+</kw>
+<kw name="Click Text" owner="AppiumLibrary">
+<msg time="2024-02-15T11:34:27.549498" level="INFO">xpath criteria: //*[contains(@text,"Lista")]</msg>
+<arg>${item}</arg>
+<doc>Click text identified by ``text``.</doc>
+<status status="PASS" start="2024-02-15T11:34:27.038145" elapsed="0.511353"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="AppiumLibrary">
+<arg>${checkpoint}</arg>
+<arg>5</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" start="2024-02-15T11:34:27.549498" elapsed="2.136417"/>
+</kw>
+<arg>Lista</arg>
+<arg>Luke Skywalker</arg>
+<status status="PASS" start="2024-02-15T11:34:26.326879" elapsed="3.359036"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-02-15T11:34:29.685915" level="INFO">${orign} = //android.widget.TextView[@text="@skywalker"]/../../..//*[contains(@resource-id, "drag_handle")]</msg>
+<var>${orign}</var>
+<arg>//android.widget.TextView[@text="@skywalker"]/../../..//*[contains(@resource-id, "drag_handle")]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-02-15T11:34:29.685915" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-02-15T11:34:29.685915" level="INFO">${target} = //android.widget.TextView[@text="@mando"]/../../..//*[contains(@resource-id, "drag_handle")]</msg>
+<var>${target}</var>
+<arg>//android.widget.TextView[@text="@mando"]/../../..//*[contains(@resource-id, "drag_handle")]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-02-15T11:34:29.685915" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-02-15T11:34:32.687442" level="INFO">Slept 3 seconds.</msg>
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-02-15T11:34:29.687417" elapsed="3.000025"/>
+</kw>
+<kw name="My Drag And Drop" owner="extend">
+<msg time="2024-02-15T11:34:33.299972" level="FAIL">UnknownMethodException: Message: Not implemented
+Stacktrace:
+NotImplementedError: Not implemented
+    at AndroidUiautomator2Driver.doTouchDrag (C:\QAX\projects\yodaap-robot\node_modules\appium-uiautomator2-driver\node_modules\appium-android-driver\lib\commands\touch.js:88:9)
+    at AndroidUiautomator2Driver.performTouch (C:\QAX\projects\yodaap-robot\node_modules\appium-uiautomator2-driver\node_modules\appium-android-driver\lib\commands\touch.js:159:23)
+    at commandExecutor (C:\QAX\projects\yodaap-robot\node_modules\appium-uiautomator2-driver\node_modules\@appium\base-driver\lib\basedriver\driver.ts:106:18)
+    at C:\QAX\projects\yodaap-robot\node_modules\appium-uiautomator2-driver\node_modules\async-lock\lib\index.js:171:12
+    at AsyncLock._promiseTry (C:\QAX\projects\yodaap-robot\node_modules\appium-uiautomator2-driver\node_modules\async-lock\lib\index.js:306:31)
+    at exec (C:\QAX\projects\yodaap-robot\node_modules\appium-uiautomator2-driver\node_modules\async-lock\lib\index.js:170:9)
+    at AsyncLock.acquire (C:\QAX\projects\yodaap-robot\node_modules\appium-uiautomator2-driver\node_modules\async-lock\lib\index.js:189:3)
+    at AndroidUiautomator2Driver.executeCommand (C:\QAX\projects\yodaap-robot\node_modules\appium-uiautomator2-driver\node_modules\@appium\base-driver\lib\basedriver\driver.ts:122:39)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at defaultBehavior (C:\QAX\projects\yodaap-robot\node_modules\appium\lib\appium.js:1109:14)
+    at AppiumDriver.executeWrappedCommand (C:\QAX\projects\yodaap-robot\node_modules\appium\lib\appium.js:1215:16)
+    at AppiumDriver.executeCommand (C:\QAX\projects\yodaap-robot\node_modules\appium\lib\appium.js:1121:17)
+    at asyncHandler (C:\QAX\projects\yodaap-robot\node_modules\@appium\base-driver\lib\protocol\protocol.js:393:19)</msg>
+<arg>${orign}</arg>
+<arg>${target}</arg>
+<status status="FAIL" start="2024-02-15T11:34:32.687442" elapsed="0.614033">UnknownMethodException: Message: Not implemented
+Stacktrace:
+NotImplementedError: Not implemented
+    at AndroidUiautomator2Driver.doTouchDrag (C:\QAX\projects\yodaap-robot\node_modules\appium-uiautomator2-driver\node_modules\appium-android-driver\lib\commands\touch.js:88:9)
+    at AndroidUiautomator2Driver.performTouch (C:\QAX\projects\yodaap-robot\node_modules\appium-uiautomator2-driver\node_modules\appium-android-driver\lib\commands\touch.js:159:23)
+    at commandExecutor (C:\QAX\projects\yodaap-robot\node_modules\appium-uiautomator2-driver\node_modules\@appium\base-driver\lib\basedriver\driver.ts:106:18)
+    at C:\QAX\projects\yodaap-robot\node_modules\appium-uiautomator2-driver\node_modules\async-lock\lib\index.js:171:12
+    at AsyncLock._promiseTry (C:\QAX\projects\yodaap-robot\node_modules\appium-uiautomator2-driver\node_modules\async-lock\lib\index.js:306:31)
+    at exec (C:\QAX\projects\yodaap-robot\node_modules\appium-uiautomator2-driver\node_modules\async-lock\lib\index.js:170:9)
+    at AsyncLock.acquire (C:\QAX\projects\yodaap-robot\node_modules\appium-uiautomator2-driver\node_modules\async-lock\lib\index.js:189:3)
+    at AndroidUiautomator2Driver.executeCommand (C:\QAX\projects\yodaap-robot\node_modules\appium-uiautomator2-driver\node_modules\@appium\base-driver\lib\basedriver\driver.ts:122:39)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at defaultBehavior (C:\QAX\projects\yodaap-robot\node_modules\appium\lib\appium.js:1109:14)
+    at AppiumDriver.executeWrappedCommand (C:\QAX\projects\yodaap-robot\node_modules\appium\lib\appium.js:1215:16)
+    at AppiumDriver.executeCommand (C:\QAX\projects\yodaap-robot\node_modules\appium\lib\appium.js:1121:17)
+    at asyncHandler (C:\QAX\projects\yodaap-robot\node_modules\@appium\base-driver\lib\protocol\protocol.js:393:19)</status>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2024-02-15T11:34:33.301475" elapsed="0.000000"/>
+</kw>
+<kw name="Close session" owner="base">
+<status status="NOT RUN" start="2024-02-15T11:34:33.301475" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2024-02-15T11:34:01.899170" elapsed="31.402305">UnknownMethodException: Message: Not implemented
+Stacktrace:
+NotImplementedError: Not implemented
+    at AndroidUiautomator2Driver.doTouchDrag (C:\QAX\projects\yodaap-robot\node_modules\appium-uiautomator2-driver\node_modules\appium-android-driver\lib\commands\touch.js:88:9)
+    at AndroidUiautomator2Driver.performTouch (C:\QAX\projects\yodaap-robot\node_modules\appium-uiautomator2-driver\node_modules\appium-android-driver\lib\commands\touch.js:159:23)
+    at commandExecutor (C:\QAX\projects\yodaap-robot\node_modules\appium-uiautomator2-driver\node_modules\@appium\base-driver\lib\basedriver\driver.ts:106:18)
+    at C:\QAX\projects\yodaap-robot\node_modules\appium-uiautomator2-driver\node_modules\async-lock\lib\index.js:171:12
+    at AsyncLock._promiseTry (C:\QAX\projects\yodaap-robot\node_modules\appium-uiautomator2-driver\node_modules\async-lock\lib\index.js:306:31)
+    at exec (C:\QAX\projects\yodaap-robot\node_modules\appium-uiautomator2-driver\node_modules\async-lock\lib\index.js:170:9)
+    at AsyncLock.acquire (C:\QAX\projects\yodaap-robot\node_modules\appium-uiautomator2-driver\node_modules\async-lock\lib\index.js:189:3)
+    at AndroidUiautomator2Driver.executeCommand (C:\QAX\projects\yodaap-robot\node_modules\appium-uiautomator2-driver\node_modules\@appium\base-driver\lib\basedriver\driver.ts:122:39)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at defaultBehavior (C:\QAX\projects\yodaap-robot\node_modules\appium\lib\appium.js:1109:14)
+    at AppiumDriver.executeWrappedCommand (C:\QAX\projects\yodaap-robot\node_modules\appium\lib\appium.js:1215:16)
+    at AppiumDriver.executeCommand (C:\QAX\projects\yodaap-robot\node_modules\appium\lib\appium.js:1121:17)
+    at asyncHandler (C:\QAX\projects\yodaap-robot\node_modules\@appium\base-driver\lib\protocol\protocol.js:393:19)</status>
+</test>
+<status status="FAIL" start="2024-02-15T11:34:01.765895" elapsed="31.536581"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Dragdrop">Dragdrop</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
